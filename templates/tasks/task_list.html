@@ -18,8 +18,14 @@
 
           {% if task.done %}
             <strong style="color: green">Done</strong>
+            <a class="btn btn-secondary float-right" href="{% url 'tasks:task_change_done_status' pk=task.id %}" role="button">
+              Undo
+            </a>
           {% else %}
             <strong style="color: red">Not done</strong>
+            <a class="btn btn-success float-right" href="{% url 'tasks:task_change_done_status' pk=task.id %}" role="button">
+              Complete
+            </a>
           {% endif %}
 
           <br>
